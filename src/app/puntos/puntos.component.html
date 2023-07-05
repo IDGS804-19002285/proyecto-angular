@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-6">
+        <h2>Puntos</h2>
+        <div class="d-inline">
+            <mat-form-field>
+            <mat-label for="" class="form-label">X 1</mat-label>
+            <input matInput type="text" [(ngModel)]="numero1" name="numero1" placeholder="X1" class="form-control">
+            </mat-form-field>
+        </div>
+        <div class="d-inline">
+            <mat-form-field>
+            <mat-label for="" class="form-label">X 2</mat-label>
+            <input matInput type="text" [(ngModel)]="numero2" name="numero2" placeholder="X2" class="form-control">
+            </mat-form-field>
+        </div>
+        <div class="d-inline">
+            <mat-form-field>
+            <mat-label for="" class="form-label">Y 1</mat-label>
+            <input matInput type="text" [(ngModel)]="numero3" name="numero3" placeholder="Y1" class="form-control">
+            </mat-form-field>
+        </div>
+        <div class="d-inline">
+            <mat-form-field>
+            <mat-label for="" class="form-label">Y 2</mat-label>
+            <input matInput type="text" [(ngModel)]="numero4" name="numero4" placeholder="Y2" class="form-control">
+            </mat-form-field>
+        </div>
+        <div class="d-inline">
+            <button mat-raised-button color="primary" (click)="calcular()">Calcular</button>
+        </div>
+    </div>
+    <hr>
+    <div class="col-6">
+        <h2>El resultado es: {{resultado}}</h2>
+    </div>
+</div>

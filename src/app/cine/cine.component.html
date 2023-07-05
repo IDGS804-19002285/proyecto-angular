@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row p-4 m-4">
+
+        <div class="col-md-4">
+            <form  #formulario="ngForm" (ngSubmit)="Calcular(formulario)">
+                    
+                <div >
+                <label> Nombre</label>
+                    <input class="float-end " name="Name" [(ngModel)]="formData.Name" type="text" >
+                </div>
+                <br>
+                <div>
+                    <label>Tarjeta</label>
+                    <div class="float-end ">
+                        <input type="radio" value="No" name="CreditCard" [(ngModel)]="formData.CreditCard" required>
+                        <label for="">No</label>
+                    </div>
+                    <div class="float-end ">
+                        <input type="radio" value="Si" name="CreditCard" [(ngModel)]="formData.CreditCard">
+                        <label for="">Sí</label>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label>Numero Personas</label>
+                    <input class="float-end " name="NPeople" [(ngModel)]="formData.NPeople" type="number" required>
+                </div>
+                <br>
+                    
+                <br>
+                <div>
+                    <label>Numero Boletos</label>
+                    <input class="float-end" name="NTickets" [(ngModel)]="formData.NTickets" type="number" required>
+                </div>
+                <br>
+            </form>
+            <button type="submit" (click)="Calcular(formulario)"
+                [disabled]="!formulario.form.valid"
+                 class="btn btn-light">Pagar</button>
+            <label>Total a pagar</label><br>
+            <input class="float-end" type="number" [(ngModel)]="end" readonly>
+            <hr>
+            <div class="col-6">
+                <h2>Transaccion: {{resultado}}</h2>
+            </div>
+        </div>   
+    </div>
+</div>

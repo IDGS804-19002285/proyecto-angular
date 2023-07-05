@@ -1,0 +1,77 @@
+<div class="container">
+    <h2>Resistencias</h2>
+    <div class="row p-4 m-4">
+
+        <div class="col-md-2">
+            <div class="form-floating">
+                <select class="form-select" [(ngModel)]="V1" >
+                  <option *ngFor="let c of colores" class="opt"
+                  style="--color: {{c.rgb}};" value="{{c.value}}">{{c.name}}</option>
+                </select>
+                <label>Linea 1</label>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-floating">
+                <select class="form-select" [(ngModel)]="V2" >
+                  <option *ngFor="let c of colores" class="opt"
+                   style="--color: {{c.rgb}};" value="{{c.value}}">{{c.name}}</option>
+                </select>
+                <label>Linea 2</label>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-floating">
+                <select class="form-select" [(ngModel)]="V3">
+                  <option *ngFor="let c of colores" class="opt"
+                   style="--color: {{c.rgb}};" value="{{c.value}}">{{c.name}}</option>
+                </select>
+                <label>Linea 3</label>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-floating">
+                <select class="form-select" [(ngModel)]="V4">
+                  <option style="background-color: #FF0;" value="0.05">Oro</option>
+                  <option style="background-color: #CCC;" value="0.1">Plata</option>
+                </select>
+                <label>Linea 4</label>
+            </div>
+        </div>
+
+<div class="col-md-2">
+    <div class="form-floating">
+                <button class="btn btn-primary m-4" (click)="calcularR()">Calcular</button>
+                <br>
+    </div>
+</div>
+
+<div class="row">
+    
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>Color 1</th>
+                <th>Color 2</th>
+                <th>Color 3</th>
+                <th>Valor</th>
+                <th>Positivo</th>
+                <th>Negativo</th>
+            </tr>
+            <tr *ngFor="let t of tabla">
+
+                <td class="option" style="--color: {{colores[t[0]].rgb}};">{{colores[t[0]].name}}</td>
+                <td class="option" style="--color: {{colores[t[1]].rgb}};">{{colores[t[1]].name}}</td>
+                <td class="option" style="--color: {{colores[t[2]].rgb}};">{{colores[t[2]].name}}</td>
+                <td>{{t[3]}}</td>
+                <td>{{t[4]}}</td>
+                <td>{{t[5]}}</td>
+            </tr>
+        </table>
+
+</div>
+
+
+</div>
